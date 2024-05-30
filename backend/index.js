@@ -4,7 +4,10 @@ const app = express();
 const userRouter = require("./routes/user");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 
+
+app.use(bodyParser.json());
 
 app.use(cors());
 
