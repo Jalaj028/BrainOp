@@ -1,10 +1,9 @@
 import { Button, Card, TextField, Typography } from "@mui/material";
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function UserLogin() {
-    // const navigate = useNavigate();
+function UserSignup() {
     const[email, setEmail] = useState("");
     const[password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -14,7 +13,7 @@ function UserLogin() {
         <div style={{display:"flex", justifyContent:"center", marginTop:200, marginBottom:100}}>
             <Card style={{padding:30}}>
             <div style={{textAlign:"center", color:"black", marginBottom:40}}>
-            <Typography variant="h6">Signin</Typography>
+            <Typography variant="h6">SignUp</Typography>
         </div>
             <TextField
             id="outlined-basic" 
@@ -39,25 +38,18 @@ function UserLogin() {
             <Button
                     size={"large"}
                     variant="contained"
-                    onClick={async () => {
-                        const res = await axios.post(`http://localhost:3000/user/login`, {
+                    onClick={async() => {
+                        const response = await axios.post(`http://localhost:3000/user/signup`, {
                             email: email,
                             password: password
-                        }, {
-                            headers: {
-                                "Content-type": "application/json"
-                            }
-                        });
-                        const data = res.data;
-
+                        })
+                        let data = response.data;
                         localStorage.setItem("token", data.token);
-                        alert("user login successful");
                         window.location = "/posts"
-                       
                         // navigate("/posts")
                     }}
 
-                > Signin</Button>
+                > Signup</Button>
             </div>
 
             </Card>
@@ -67,4 +59,4 @@ function UserLogin() {
     )
 }
 
-export default UserLogin;
+export default UserSignup;
