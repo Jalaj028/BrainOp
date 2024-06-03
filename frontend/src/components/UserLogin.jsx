@@ -53,7 +53,8 @@ function UserLogin() {
 
                                     localStorage.setItem("token", data.token);
                                     alert("User login successful");
-                                    window.location = "/posts"
+                                    // window.location = "/posts"
+                                    navigate("/posts")
                                 } catch (error) {
                                     if (error.response && error.response.status === 403) {
                                         // Unauthorized
