@@ -37,35 +37,28 @@ function UserLogin() {
             <br /><br />
             <div style={{display:"flex", justifyContent:"center"}}>
             <Button
-                            size={"large"}
-                            variant="contained"
-                            onClick={async () => {
-                                try {
-                                    const res = await axios.post(`http://localhost:3000/user/login`, {
-                                        email: email,
-                                        password: password
-                                    }, {
-                                        headers: {
-                                            "Content-type": "application/json"
-                                        }
-                                    });
-                                    const data = res.data;
+                    size={"large"}
+                    variant="contained"
+                    onClick={async () => {
+                        const res = await axios.post(`http://localhost:3000/user/login`, {
+                            email: email,
+                            password: password
+                        }, {
+                            headers: {
+                                "Content-type": "application/json"
+                            }
+                        });
+                        const data = res.data;
 
-                                    localStorage.setItem("token", data.token);
-                                    alert("User login successful");
-                                    navigate("/posts"); 
-                                    // window.location="/posts"
-                                } catch (error) {
-                                    if (error.response && error.response.status === 403) {
-                                        // Unauthorized
-                                        alert("Incorrect email or password");
-                                    } else {
-                                        // Other errors
-                                        alert("An error occurred. Please try again.");
-                                    }
-                                }
-                            }}
-                        > Signin</Button>
+                        localStorage.setItem("token", data.token);
+                        alert("user login successful");
+                        navigate("/posts")
+                        window.location = "/posts"
+                       
+                        // navigate("/posts")
+                    }}
+
+                > Signin</Button>
             </div>
 
             </Card>
