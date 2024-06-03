@@ -47,7 +47,7 @@ function AddPost() {
                     size={"large"}
                     variant="contained"
                     onClick={async () => {
-                        await axios.post(`http://localhost:3000/user/posts`, {
+                        await axios.post(`https://brain-op-beta.vercel.app/user/posts`, {
                             title: title,
                                 description: description,
                                 image: image,

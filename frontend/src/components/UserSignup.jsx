@@ -39,7 +39,7 @@ function UserSignup() {
                     size={"large"}
                     variant="contained"
                     onClick={async() => {
-                        const response = await axios.post(`http://localhost:3000/user/signup`, {
+                        const response = await axios.post(`https://brain-op-beta.vercel.app/user/signup`, {
                             email: email,
                             password: password
                         })

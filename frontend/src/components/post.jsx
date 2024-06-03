@@ -9,7 +9,7 @@ function Post() {
     const [post, setPost] = useState(null);
     
     useEffect(() => {
-        axios.get("http://localhost:3000/user/post/" + postId, {
+        axios.get("https://brain-op-beta.vercel.app/user/post/" + postId, {
             method: "GET",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token")

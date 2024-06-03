@@ -26,7 +26,7 @@ function AppbarAdmin() {
 
    
 
-     fetch("http://localhost:3000/user/me", {
+     fetch("https://brain-op-beta.vercel.app/user/me", {
         method: "GET",
         headers: {
           "Authorization": "Bearer " +  localStorage.getItem("token")

@@ -7,7 +7,7 @@ function Posts() {
     const [posts, setPosts] = useState([]);
 
     const init = async () => {
-        const response = await axios.get(`http://localhost:3000/user/posts/`, {
+        const response = await axios.get(`https://brain-op-beta.vercel.app/user/posts/`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
