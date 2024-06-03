@@ -52,10 +52,9 @@ function UserLogin() {
 
                         localStorage.setItem("token", data.token);
                         alert("user login successful");
-                        navigate("/posts")
-                        // window.location = "/"
-                       
                         // navigate("/posts")
+                        window.location = "/posts"
+                    
                     }}
 
                 > Signin</Button>
