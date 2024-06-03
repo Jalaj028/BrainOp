@@ -45,8 +45,9 @@ function UserSignup() {
                         })
                         let data = response.data;
                         localStorage.setItem("token", data.token);
-                        window.location = "/posts"
                         navigate("/posts")
+                        window.location = "/posts"
+
                     }}
 
                 > Signup</Button>
