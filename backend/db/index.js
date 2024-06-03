@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
 const postSchema = new mongoose.Schema({
     title: { type: String },
     description: { type: String},
-    image: {type: String},
+    image: {type: String}
 })
 
 

@@ -9,6 +9,7 @@ import Home from './components/Front'
 import Posts from './components/Posts'
 import AddPost from './components/addPost'
 import Post from './components/post'
+import Footer from './components/footer'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                 <Route path='/addPost' element={<AddPost />} />
                 <Route path='/post/:postId' element={<Post />} />
               </Routes>
+              <Footer />
             </Router>
     </>
   )

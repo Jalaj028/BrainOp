@@ -105,11 +105,15 @@ function AppbarAdmin() {
         <div>
             <div className="flex flex-wrap justify-between bg-slate-400 m-1 p-2">
                 <div>
-                    <h1 className="text-center text-2xl cursor-pointer" onClick={() => {
-                        navigate("/")
-                    }}>BrainOp</h1>
+                    
+        <Typography variant="h5" style={{fontWeight:"600"}} onClick={() => {
+                        navigate("/")}}>BrainOp</Typography>
+
                 </div>  
                 <div>
+                <Button variant="contained" sx={{mr:1}} onClick={() => {
+                    navigate('/');
+                }}>Home</Button>
                 <Button variant="contained" sx={{mr:1}} onClick={() => {
                     navigate('/signin');
                 }}>SignIn</Button>

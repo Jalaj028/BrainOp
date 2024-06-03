@@ -69,6 +69,7 @@ router.get('/post/:postId', authenticateJwt, async (req, res) => {
 });
 
 router.post('/posts', authenticateJwt, async (req, res) => {
+  console.log("add post api hit")
   const post = new Posts(req.body);
   await post.save();
   res.json({ message: 'post created successfully', postId: post.id });

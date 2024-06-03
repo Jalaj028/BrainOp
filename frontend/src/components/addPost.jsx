@@ -50,7 +50,7 @@ function AddPost() {
                         await axios.post(`http://localhost:3000/user/posts`, {
                             title: title,
                                 description: description,
-                                imageLink: image,
+                                image: image,
                         }, {
                             headers: {
                                 "Authorization": "Bearer " + localStorage.getItem("token")

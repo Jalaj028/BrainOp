@@ -60,9 +60,6 @@ function PostCard(props) {
         <img src={post.image} style={{width: 350}} ></img>
         <div style={{marginLeft: 10}}>
             <Typography variant="h5">{post.title}</Typography>
-            <Typography variant="subtitle2" style={{color: "gray"}}>
-                Price
-            </Typography>
             <Typography variant="subtitle1">
                 <b>{post.description} </b>
             </Typography>
