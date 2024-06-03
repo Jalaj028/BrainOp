@@ -5,7 +5,7 @@ import { useState } from "react";
 import "../index.css";
 import axios from "axios";
 
-function AppbarAdmin() {
+function Navbar() {
    const navigate = useNavigate();
     const[email, setEmail] = useState(null);
    
@@ -128,4 +128,4 @@ function AppbarAdmin() {
    } 
 
    
-export default AppbarAdmin; 
+export default Navbar; 
