@@ -3,36 +3,36 @@ import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "../index.css";
+import axios from "axios";
 
 function AppbarAdmin() {
    const navigate = useNavigate();
     const[email, setEmail] = useState(null);
    
 
-   useEffect(() => {
+    useEffect(() => {
 
-    function callback2(data) {
-        
-       if(data.email){
-        setEmail(data.email);
-       }
-       
-        console.log(data);
-    }
-
-    function callback1(res) {
-        res.json().then(callback2);
-    }
-
-   
-
-     fetch("https://brain-op-beta.vercel.app/user/me", {
-        method: "GET",
-        headers: {
-          "Authorization": "Bearer " +  localStorage.getItem("token")
+        function callback2(data) {
+            if (data.email) {
+                setEmail(data.email);
+            }
+            console.log(data);
         }
-     }).then(callback1)
-   }, [])
+    
+        function callback1(response) {
+            callback2(response.data);
+        }
+    
+        axios.get('https://brain-op-beta.vercel.app/user/me', {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+        .then(callback1)
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+        });
+    }, []);
 
    
    if(email){

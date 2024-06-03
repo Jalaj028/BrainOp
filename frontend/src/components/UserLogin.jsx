@@ -37,42 +37,35 @@ function UserLogin() {
             <br /><br />
             <div style={{display:"flex", justifyContent:"center"}}>
             <Button
-            variant="contained"
-            onClick={() => {
+                            size={"large"}
+                            variant="contained"
+                            onClick={async () => {
+                                try {
+                                    const res = await axios.post(`http://localhost:3000/user/login`, {
+                                        email: email,
+                                        password: password
+                                    }, {
+                                        headers: {
+                                            "Content-type": "application/json"
+                                        }
+                                    });
+                                    const data = res.data;
 
-                function callback2(data){
-                //   if(data.message === "welcome to the admin dashboard") {
-                //     alert("admin dashboard opened");
-                // //  return(
-                // //     <h1 style={{color: "white"}}>hello from adminlogin</h1>
-                // //  )
-                //localStorage.setItem("token", data.token)
-                  if(data.token){localStorage.setItem("token", data.token)
-                  window.location="/posts"
-                alert("User logged in successfully")
-                }
-                  if(!data.token)alert("user email or password incorrect")
-
-                    // console.log(data.token);
-                }
-
-                function callback1(resp){
-                    resp.json().then(callback2);
-                }
-                fetch("https://brain-op-beta.vercel.app/user/login", {
-                    method:"POST",
-                    body: JSON.stringify({
-                        email: email,
-                        password: password
-                    }),
-                    headers: {
-                        "Content-type": "application/json",
-                    }
-
-                }).then(callback1)
-
-            }}
-            >Login</Button>
+                                    localStorage.setItem("token", data.token);
+                                    alert("User login successful");
+                                    // navigate("/posts"); 
+                                    window.location="/posts"
+                                } catch (error) {
+                                    if (error.response && error.response.status === 403) {
+                                        // Unauthorized
+                                        alert("Incorrect email or password");
+                                    } else {
+                                        // Other errors
+                                        alert("An error occurred. Please try again.");
+                                    }
+                                }
+                            }}
+                        > Signin</Button>
             </div>
 
             </Card>
