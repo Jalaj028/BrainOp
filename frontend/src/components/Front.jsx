@@ -17,7 +17,7 @@ function Home() {
                 hire a person and helping narrow down the best candidate by helping hiring 
                 managers predict the best-fit candidate for the role.
                 </p>
-                {<div style={{display: "flex", marginTop: 20}}>
+                {/* {<div style={{display: "flex", marginTop: 20}}>
                     <div style={{marginRight: 10}}>
                         <Button
                             size={"large"}
@@ -36,7 +36,7 @@ function Home() {
                             }}
                         >Signin</Button>
                     </div>
-                </div>}
+                </div>} */}
             </div>
             <div>
             </div>
