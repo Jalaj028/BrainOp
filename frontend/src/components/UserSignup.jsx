@@ -45,8 +45,8 @@ function UserSignup() {
                         })
                         let data = response.data;
                         localStorage.setItem("token", data.token);
-                        navigate("/posts")
-                        // window.location = "/posts"
+                        // navigate("/posts")
+                        window.location = "/"
 
                     }}
 
