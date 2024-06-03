@@ -52,7 +52,7 @@ function UserLogin() {
 
                         localStorage.setItem("token", data.token);
                         alert("user login successful");
-                        navigate("/")
+                        navigate("/posts")
                         // window.location = "/posts"
                     
                     }}
