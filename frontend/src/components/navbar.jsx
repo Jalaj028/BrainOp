@@ -70,6 +70,18 @@ function Navbar() {
             backgroundColor: 'white',
         }}
         onClick={() => {
+                                navigate("/posts")
+                            }}
+                        >All Posts</Button>
+       
+        <Button variant="contained"
+        style={{
+            marginLeft: 10,
+            color: "black",
+            // border:"2px solid black"
+            backgroundColor: 'white',
+        }}
+        onClick={() => {
                                 navigate("/addPost")
                             }}
                         >Add Post</Button>
