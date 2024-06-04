@@ -6,11 +6,11 @@ function Home() {
     return <div>
     <Grid container style={{padding: "5vw"}}>
         <Grid item xs={12} md={6} lg={6}>
-            <div style={{marginTop: 100}}>
+            <div style={{marginTop: 20, marginRight: 10}}>
                 <Typography variant={"h2"}>
                     BrainOp
                 </Typography>
-                <p>
+                <p className="mt-4">
                 At BrainOp Technologies, we're building Mapmox, an analytics platform where HRs and
                 hiring managers can make informed decisions while hiring a candidate. The platform 
                 helps with 2 core problems in people management, including decreasing the time to 
