@@ -28,51 +28,81 @@ router.get("/me", authenticateJwt, async (req, res) => {
 
 router.post('/signup', (req, res) => {
   const { email, password } = req.body;
-  function callback(user) {
-    if (user) {
-      res.status(403).json({ message: 'User already exists' });
-    } else {
-      const obj = { email: email, password: password };
-      const newUser = new User(obj);
-      newUser.save();
-
-      const token = jwt.sign({ email, role: 'user' }, SECRET, { expiresIn: '1h' });
-      res.json({ message: 'User created successfully', token });
+  try{
+    function callback(user) {
+      if (user) {
+        res.status(403).json({ message: 'User already exists' });
+      } else {
+        const obj = { email: email, password: password };
+        const newUser = new User(obj);
+        newUser.save();
+  
+        const token = jwt.sign({ email, role: 'user' }, SECRET, { expiresIn: '1h' });
+        res.json({ message: 'User created successfully', token });
+      }
+  
     }
-
+    User.findOne({ email }).then(callback);
+  } catch(error){
+    console.error(error)
+    res.status(500).json({ message: 'Internal server error' });
   }
-  User.findOne({ email }).then(callback);
+  
 });
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
-  const user = await User.findOne({ email, password });
-  if (user) {
-    const token = jwt.sign({ email, role: 'user' }, SECRET, { expiresIn: '1h' });
-    res.json({ message: 'Logged in successfully', token });
-  } else {
-    res.status(403).json({ message: 'Invalid email or password' });
+  try{
+    const user = await User.findOne({ email, password });
+    if (user) {
+      const token = jwt.sign({ email, role: 'user' }, SECRET, { expiresIn: '1h' });
+      res.json({ message: 'Logged in successfully', token });
+    } else {
+      res.status(403).json({ message: 'Invalid email or password' });
+    }
+  } catch(error){
+    console.error(error)
+    res.status(500).json({ message: 'Internal server error' });
   }
+  
 });
 
 router.get('/posts', authenticateJwt, async (req, res) => {
   console.log("posts api hit")
-  const posts = await Posts.find({});
-  res.json({ posts });
+  try{
+    const posts = await Posts.find({});
+    res.json({ posts });
+  } catch(error){
+    console.error(error)
+    res.status(500).json({ message: 'Internal server error' });
+  }
+
 });
 
 router.get('/post/:postId', authenticateJwt, async (req, res) => {
   console.log("post api hit")
   const postId = req.params.postId;
-  const post = await Posts.findById(postId);
-  res.json({ post });
+  try{
+    const post = await Posts.findById(postId);
+    res.json({ post });
+  }catch(error){
+    console.error(error)
+    res.status(500).json({ message: 'Internal server error' });
+  }
+  
 });
 
 router.post('/posts', authenticateJwt, async (req, res) => {
   console.log("add post api hit")
   const post = new Posts(req.body);
-  await post.save();
+  try{
+    await post.save();
   res.json({ message: 'post created successfully', postId: post.id });
+  }catch(error){
+    console.error(error)
+    res.status(500).json({ message: 'Internal server error' });
+  }
+  
 });
 
 module.exports = router;
