@@ -14,13 +14,14 @@ MERN stack
    ```bash
    git clone https://github.com/Jalaj028/BrainOp.git
 
-## Install the Dependencies
 
-   ```bash
-   npm install
+# ## Install the Dependencies
 
-## Start the project
+#    ```bash
+#    npm install
 
-   ```bash
-   cd frontend
-   npm run dev
+# ## Start the project
+
+#    ```bash
+#    cd frontend
+#    npm run dev
