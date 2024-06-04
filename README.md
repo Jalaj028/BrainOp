@@ -14,11 +14,11 @@ MERN stack
 
 ## Install the Dependencies
 
-   
+   ```bash
    npm install
 
 ## Start the project
 
-   
+   ```bash
    cd frontend
    npm run dev
