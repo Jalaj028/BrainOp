@@ -72,7 +72,7 @@ function Navbar() {
         onClick={() => {
                                 navigate("/posts")
                             }}
-                        >All Posts</Button>
+                        >All Students</Button>
        
         <Button variant="contained"
         style={{
@@ -84,7 +84,7 @@ function Navbar() {
         onClick={() => {
                                 navigate("/addPost")
                             }}
-                        >Add Post</Button>
+                        >Add Student</Button>
 
 <Button
          variant="contained" 
