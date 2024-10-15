@@ -19,7 +19,7 @@ function AddPost() {
                         setTitle(e.target.value)
                     }}
                     fullWidth={true}
-                    label="Title"
+                    label="Student Name"
                     variant="outlined"
                 />
 
@@ -29,7 +29,7 @@ function AddPost() {
                         setDescription(e.target.value)
                     }}
                     fullWidth={true}
-                    label="Description"
+                    label="Student marks and review"
                     variant="outlined"
                 />
 
@@ -39,7 +39,7 @@ function AddPost() {
                         setImage(e.target.value)
                     }}
                     fullWidth={true}
-                    label="Image link"
+                    label="Student Image"
                     variant="outlined"
                 />
 
