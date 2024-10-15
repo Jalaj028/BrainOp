@@ -8,14 +8,26 @@ function Home() {
         <Grid item xs={12} md={6} lg={6}>
             <div style={{marginTop: 20, marginRight: 10}}>
                 <Typography variant={"h2"}>
-                    BrainOp
+                    Student Counselling App
                 </Typography>
                 <p className="mt-4">
-                At BrainOp Technologies, we're building Mapmox, an analytics platform where HRs and
-                hiring managers can make informed decisions while hiring a candidate. The platform 
-                helps with 2 core problems in people management, including decreasing the time to 
-                hire a person and helping narrow down the best candidate by helping hiring 
-                managers predict the best-fit candidate for the role.
+                Welcome to [App Name]
+Your Mental Wellness Journey Starts Here
+
+Empowering Students, One Conversation at a Time
+At [App Name], we believe that every student deserves support and guidance on their mental health journey. 
+Our platform connects you with trained counselors and resources tailored to your needs, helping you thrive academically and personally.
+
+                    Key Features
+Confidential Counseling: Speak with licensed professionals in a safe and secure environment.
+
+24/7 Support: Access help whenever you need it, day or night.
+
+Resource Library: Explore articles, videos, and tools designed to enhance your well-being.
+
+Community Forum: Join a supportive community where you can share experiences and connect with peers.
+
+Personalized Plans: Get customized strategies and tips that fit your unique situation.
                 </p>
                 {/* {<div style={{display: "flex", marginTop: 20}}>
                     <div style={{marginRight: 10}}>
